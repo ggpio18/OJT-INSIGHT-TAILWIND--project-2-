@@ -1,0 +1,530 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto
+}
+@layer components{
+    /* HEADER sticky */
+    .header{
+        @apply fixed
+        top-0
+        left-0
+        w-[100%]
+        flex 
+        justify-between 
+        transition-all
+    }
+    .header.scrolled{
+        @apply
+        flex 
+        justify-between 
+        py-[.1rem]
+        bg-dark
+        transition-all
+        md:mt-[1rem]
+        md:mx-[14rem]
+        rounded-xl
+        md:w-[75.3%]
+        z-50
+        overflow-hidden
+        md:left-0
+        md:right-0
+        md:mx-auto;
+    }
+    .branding.sticky .header__navd ul li a{
+        @apply
+        text-dark
+    }
+    /* HEADER */
+    .header__banner{
+        @apply bg-starBanner
+        min-h-[700px]
+        md:min-h-[90vh]
+        bg-cover   
+    }
+    .branding img{
+        @apply w-[5rem] my-3
+    }
+    .branding{
+        @apply 
+        md:flex 
+        md:justify-between 
+        items-center 
+        gap-[2rem]
+        transition-all
+    }
+    .branding .header__navd{
+        @apply hidden 
+        md:flex 
+        md:gap-[1rem] 
+        md:justify-around
+    }
+    .header__action{ 
+        @apply bg-[light] 
+        absolute 
+        top-[0] 
+        right-[0] 
+        w-[0] 
+        h-[100vh] 
+        px-0 
+        pt-0 
+        overflow-hidden 
+        shadow-md
+        md:static 
+        md:h-fit 
+        md:w-fit 
+        md:shadow-none;
+    }
+    .branding .header__navd li a{
+        @apply font-medium 
+        text-base text-light
+        hover:text-accent
+    }
+    .header__action.open{
+        @apply w-[100%] 
+        px-10 
+        pt-10 
+        bg-dropdown
+        z-40
+        transition-all
+        duration-100
+    }
+    .burgir__menu{
+        @apply md:hidden
+        z-50
+        transition-all
+    }
+    .burgir__menu span{
+        @apply 
+        z-50
+        w-[1.75rem] 
+        h-[.2rem] 
+        bg-light 
+        block 
+        rounded-full 
+        transition-all;
+    }
+    .burgir__menu span:nth-child(2){
+        @apply my-1
+        z-50;
+    }
+    .header__wrapper{
+        @apply md:block 
+        flex 
+        items-center 
+        justify-between;
+    }
+    .burgir__menu.open span:first-child{
+        @apply transform 
+        translate-y-[10px] 
+        rotate-[225deg] 
+        z-50
+        transition-all
+    }
+    .burgir__menu.open span:last-child{
+        @apply transform 
+        translate-y-[-5px] 
+        rotate-[-225deg] 
+        z-50
+        transition-all
+    }
+    .burgir__menu.open span:nth-child(2){
+        @apply opacity-0 
+        z-50
+        transition-all
+    }
+    .header__action .header__navm{
+        @apply border-b-gray-400 
+        /* border-b-[2px]  */
+        transition-all
+        mt-[10rem]
+        pb-5 
+        flex 
+        flex-col 
+        gap-10
+        md:hidden 
+        text-center;
+    }
+    .header__action img{
+        @apply mx-auto 
+        py-5 
+        md:hidden
+    }
+    .header__action .header__navm li:hover a{
+        @apply text-accent 
+        font-medium 
+        text-xl 
+        text-dark
+        bg-white
+        py-5
+        px-5
+        transition-all
+    }
+
+    /* header socials */
+    .header__action .socials__header{
+        @apply
+        pt-6
+        text-3xl
+        mb-5
+        flex 
+        flex-col
+        gap-10
+        md:hidden 
+        text-center;
+    }
+    .header__action .socials__header ul{
+        @apply flex
+        justify-around
+        py-5
+        px-5
+    }
+    .header__action .socials__header ul li{
+        @apply flex
+        justify-around
+        py-5
+        px-5
+    }
+    .header__action .socials__header ul li:hover{
+        @apply text-accent 
+        font-medium 
+        text-3xl
+        text-dark
+        bg-white
+        py-5
+        px-5
+        transition-all
+    }
+    .header__action .header__navm li a{
+        @apply font-medium 
+        text-light
+         text-2xl
+    }
+    .header__action .header__btn{
+        @apply pt-5 
+        flex 
+        flex-col 
+        gap-3
+        md:flex 
+        md:flex-row-reverse
+    }
+    .header__action .header__kamote{
+        @apply flex 
+        gap-5
+    }
+    .header__action .header__btn a{
+        @apply gap-[1rem] items-center 
+        text-center 
+        hover:text-accent   
+    }
+
+    .header__action .header__btn a:last-child{
+        @apply w-[7.5rem] 
+        flex 
+        font-medium
+        hover:to-accent
+    }
+    .header__action .header__btn a{
+        @apply text-center pb-2
+    }
+
+    /* hero banner */
+    .hero__wrapper{
+        @apply pt-[8rem]
+        md:mt-[1rem]
+    }
+    .hero__wrapper .hero__evil__wrapper{
+       @apply flex 
+       flex-col 
+       md:grid 
+       md:grid-cols-2
+       md:gap-4  
+       md:mx-auto 
+       gap-4 
+       md:w-[45rem]
+    }
+    .hero__wrapper h1{
+        @apply text-light 
+        text-5xl 
+        md:mt-[5.5rem]
+        md:text-[5rem]
+        font-semibold 
+        text-center 
+        pb-[2rem]
+    }
+    .hero__wrapper .hero__evil__wrapper a{
+        @apply m-auto 
+    }
+    
+
+    /* Services */
+    .services{
+        @apply
+        py-4
+        mb-7
+    }
+    .title__section{
+        @apply py-4
+    }
+    .title__section h2{
+        @apply 
+        text-center
+        md:text-justify
+        text-accent
+        text-5xl
+        font-bold
+        mb-4
+    }
+    .title__section p{
+        @apply mb-6
+    }
+    .services__wrapper{
+        @apply grid
+        md:grid-cols-3
+        gap-[3rem]
+    }
+    .services .services__wrapper .card{
+        @apply 
+        pt-[1.75rem]
+        pb-[1rem]
+        px-[1rem]
+        text-center
+        rounded-md
+        border
+        shadow-2xl
+        border-solid 
+        hover:scale-[1.1]
+    }
+    .card:hover>a{
+        @apply 
+        bg-accent
+        text-white
+        px-[10rem]
+    }
+    .services .services__wrapper .card a{
+        @apply border-t-2
+        border-accent
+        text-center
+        px-[7rem]
+        md:px-[9rem]
+        md:px-[9.6rem]
+        pt-[1.1rem]
+        pb-[1rem]
+        /* hover:bg-accent */
+    }
+    .card ul li{
+        @apply mb-2
+        list-disc
+        list-inside
+    }
+    .card ul{
+        @apply mb-20
+    }
+    .card h2{
+        @apply text-4xl
+        font-medium
+    }
+    .card h4{
+        @apply py-4
+    }
+    .card ul li{
+        @apply mb-2
+    }
+
+    /* GALLERY */
+    .gallery__wrapper{
+        @apply flex
+        justify-center
+        min-w-[100%]
+        grid
+        grid-cols-1
+        md:grid
+        md:grid-cols-3
+        md:object-cover	
+        mb-10
+    }
+    .gallery__wrapper img{
+        @apply
+        w-[100%]
+        object-cover
+        bg-accent
+    }
+    .gallery .gallery__wrapper img{
+        @apply
+        hover:bg-black
+    }
+   
+    /* projects */
+    .projects .projects__wrapper{
+        @apply  md:flex-row md:gap-0
+    }
+    .btn.bg--secondary {
+        @apply w-[20rem] my-5 
+        hover:border-2
+         border-accent rounded
+        
+    } 
+    .projects h2{
+        @apply text-3xl text-center md:text-left 
+        text-accent font-bold pb-5
+    }
+    .project-content{
+        @apply relative;
+    }
+    .project-content::after{
+        @apply absolute top-0 left-0
+        content-['']
+        w-full h-full
+       md:bg-black/60
+        transition-all
+    }
+    .project-content:hover::after{
+        @apply scale-0;
+    }
+    .content{
+        @apply md:opacity-0
+        md:hover:opacity-100
+        transition-all
+        duration-700
+    }
+
+
+    /* CONTACTS */
+    .contacts__content{
+        @apply
+        md:grid
+        md:grid-cols-2
+        md:gap-8
+        md:order-2
+    }
+    /* .contacts__content:nth-child(1){
+        @apply md:grid
+        md:order-1
+    }
+    .contacts__content:nth-child(2){
+        @apply md:grid
+        md:order-2
+    } */
+    .contact__info{
+        @apply md:pt-[3rem]
+        md:order-last
+    }
+    .contact__form{
+        @apply 
+        z-50
+        bg-light
+    }
+
+    /* footer */
+    footer{
+        @apply bg-footer
+        py-3
+    }
+    .footer__wrapper{
+        @apply text-light
+        grid
+        grid-cols-1
+        gap-5
+        place-items-center
+        md:grid
+        md:place-items-center
+        md:grid-cols-3
+
+    }
+    .footer__wrapper .logo{
+        @apply 
+        order-first
+    }
+    .footer .footer__wrapper .logo img{
+        @apply text-4xl
+    }
+    .social__icons ul{
+        @apply flex
+        gap-8
+        text-light
+        text-2xl
+    }
+    .logo{
+        @apply
+        hover:text-accent
+    }
+}
+@layer utilities{
+    .btn{
+        @apply inline-block
+        py-[.5rem]
+        px-[1rem]
+        rounded-full
+        border-transparent
+        border-[1px]
+        text-sm
+        font-medium hover:scale-[0.9]
+        transition-all
+    }
+    .btn.bg--light{
+        @apply bg-light 
+        text-dark 
+        border-dark 
+        border-[1px]
+        hover:bg-zinc-200
+        transition-all;
+    }
+    .btn.bg--dark{
+        @apply bg-accent 
+        text-dark
+        hover:bg-light
+        transition-all
+    }
+    .btn.bg--transparent{
+        @apply bg-transparent
+        text-light
+        border-light
+        border-[1px]
+        hover:text-dark
+        transition-all
+    }
+    .btn.bg--secondary{
+        @apply bg-accent 
+        text-dark
+        transition-all
+    }
+    .bg--headerlight{
+        @apply inline-block
+        py-[1rem]
+        px-[5rem]
+        md:py-[1.2rem]
+        md:px-[5rem]
+        rounded-full
+        border-transparent
+        border-[1px]
+        text-[1rem]
+        font-medium hover:scale-[0.9]
+        transition-all
+        bg-transparent
+        text-light
+        border-light
+        border-[1px]
+        hover:bg-light
+        hover:text-dark
+        transition-all
+    }
+    .bg--headerdark{
+        @apply inline-block
+        py-[1rem]
+        px-[6rem]
+        md:py-[1.2rem]
+        md:px-[6rem]
+        rounded-full
+        border-transparent
+        border-[1px]
+        text-[1rem]
+        font-medium hover:scale-[0.9]
+        transition-all
+        bg-accent 
+        text-dark
+        hover:bg-light
+        transition-all
+    }
+}
